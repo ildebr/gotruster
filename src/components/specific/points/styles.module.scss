@@ -1,0 +1,106 @@
+@import "/src/vars.scss";
+
+.points {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 124px;
+
+  .light{
+    display:none;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+    /*max-width: 1440px;*/
+    max-width: $mw;
+    padding: $content-pad;
+    .row {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      column-gap: 64px;
+      padding: 32px;
+
+      .information {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        p {
+          max-width: 400px;
+          color: $text2-dark;
+        }
+        svg {
+          width: 62px;
+          height: 62px;
+        }
+      }
+
+      
+
+      .image img{
+        width: 100%;
+        height: auto;
+        max-width: 410px;
+      }
+    }
+  }
+
+  .hide{
+    display: none;
+  }
+}
+
+@media (min-width: $bp-md){
+  .points{
+
+    .content{
+      .row{
+        flex-direction: row;
+
+        .image{
+          max-width: 50%;
+        }
+
+        &:nth-of-type(2){
+          .information{
+          order: 2;
+          }
+        }
+
+        .image img{
+          padding: 0;
+        }
+
+      }
+
+
+    }
+  }
+}
+
+@media (prefers-color-scheme: light){
+  .points{
+    .dark{
+      display:none;
+    }
+    .light{
+      display: block;
+      img{
+        width: 62px;
+        height: 62px;
+      }
+    }
+    background-color: white;
+    .content .row .information{
+      h1{
+        color: $lt-text;
+      }
+      p{
+        color: $lt-text-p;
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+@import "/src/vars.scss";
+
+
+.hero {
+  place-items: center;
+  /*height: 700px;*/
+  background-color: $surface1-dark;
+  width: 100%;
+  padding: 48px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    column-gap: 64px;
+    align-items: center;
+    justify-content: center;
+    .information {
+      max-width: 600px;
+      padding-top: 5rem;
+      width: fit-content;
+      /*transform: translateY(-100px);*/
+      display: grid;
+      text-align: center;
+      row-gap: 24px;
+      margin-bottom: 1rem;
+      h1 {
+        color: $brand-dark;
+        font-size: 64px;
+
+        line-height: 72px;
+      }
+      p {
+        line-height: 36px;
+        color: $text2-dark;
+        font-size: 24px;
+        width: fit-content;
+      }
+    }
+
+    .ctaButtons{
+    text-align: center;
+
+      a{
+        padding: .4rem 1.7rem;
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+        text-align: center;
+        border-radius: 100px;
+        margin-top: 1.25rem;
+        font-size: 1.7rem;
+
+        &:first-of-type{
+          background-color: white;
+          color: black;
+        }
+        &:nth-of-type(2){
+          border: 1px solid white;
+          color: white;
+        }
+      }
+    }
+
+    .logo{
+      display: none;
+      img{
+        width: 100%;
+        max-height: 700px;
+      }
+    }
+
+    .logodeg{
+      font-size: 4rem;
+      background: -webkit-linear-gradient(294deg, #94e409, #28dae6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  
+  }
+}
+
+@media (min-width: $bp-md){
+  .hero .content .ctaButtons{
+    display: flex;
+      gap: .75rem;
+  }
+}
+
+@media (prefers-color-scheme: light){
+  .hero{
+    background-color: white;
+
+    .content{
+      .information{
+        h1{
+          color: black;
+        }
+      }
+      .ctaButtons{
+        a{
+
+          &:first-of-type{
+          background-color: black;
+          color: white;
+        }
+        &:nth-of-type(2){
+          border: 1px solid black;
+          color: black;
+        }
+
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark){
+  .hero{
+    .content{
+      .ctaButtons{
+        a:first-of-type{
+          filter: invert(1);
+          background-color: white;
+          color: black;
+        }
+        a:nth-of-type(2){
+          border: 1px solid hsl(0deg 0% 60%);
+        }
+      }
+    }
+  }
+}

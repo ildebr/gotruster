@@ -1,0 +1,396 @@
+@import "/src/vars.scss";
+.container {
+  display: grid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 1fr auto;
+}
+
+
+.header {
+  transition: all 0.3s 0.1s ease-out;
+  //position: fixed;
+  z-index: 99;
+  width: 100%;
+  position: relative;
+  /*background-color: $surface1-dark;*/
+  background-color: $nav-bg;
+  display: flex;
+  border-bottom: 1px solid $surface2-dark;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    padding: 0 64px;
+    .hamburguer:hover{
+      cursor: pointer;
+    }
+    .logo {
+      &.light{
+        display: none;
+      }
+      display: flex;
+      column-gap: 12px;
+      align-items: center;
+      span {
+        font-size: 24px;
+        color: $text2-dark;
+        font-weight: 400;
+      }
+      svg {
+        width: 36px;
+        height: 36px;
+        path {
+          fill: $brand-dark;
+        }
+      }
+
+
+    }
+
+    .navtext{
+      font-size: 10px;
+      color: $brand-dark;
+    }
+
+    .spacefiller{
+      height: 1px;
+      width: 30%;
+      background-color: $text2-dark;
+    }
+
+    img.light{
+      display: none;
+    }
+
+
+    .displaymenu{
+      position: absolute;
+      left: 0;
+      top: -500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 3rem 2rem;
+      background-color: $nav-bg;
+      z-index: 10;
+      width: 100%;
+      transition: .5s ease;
+
+      div{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      &.show{
+        top: 100%;
+      }
+
+      &:focus{
+        top: 100%;
+      }
+      a{
+        color: white;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .navlink{
+      font-size: 11px;
+      font-weight: 900;
+      color: white;
+
+      &:nth-of-type(1){
+        background-color: white;
+        color: $nav-bg;
+        border-radius: 50px;
+        padding: .35rem .75rem;
+      }
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 48px;
+      height: 100%;
+      align-items: center;
+    }
+    .navtext, .nav-link, .spacefiller, .menu{
+      display: none;
+    }
+  }
+}
+.scroll {
+  background: $brand-dark;
+  height: 58px;
+  .content {
+    .logo {
+      transform: scale(0.7);
+      opacity: 1;
+    }
+    .menu {
+      .link {
+        display: grid;
+        place-items: center;
+      }
+    }
+  }
+}
+
+
+
+.link {
+  display: grid;
+  grid-template-rows: 1fr 4px;
+  align-items: center;
+  justify-self: center;
+  flex-direction: column;
+  cursor: pointer;
+  hr {
+    transition: all 0.1s linear;
+    min-width: 60px;
+    opacity: 1;
+    width: 100%;
+    margin: 0;
+    border: 2px solid $brand-dark;
+  }
+  a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: 16px;
+      color: $text1-dark;
+      font-weight: 500;
+    }
+  }
+}
+.linkApp {
+  a {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid $surface4-dark;
+    span {
+      color: $text2-dark;
+    }
+  }
+}
+.footer {
+  display: grid;
+  width: 100%;
+  place-items: center;
+
+  background: $surface1-dark;
+  .content {
+    max-width: 1440px;
+    padding: 64px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+
+    justify-content: space-between;
+    .about {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 24px;
+      span {
+        color: $brand-dark;
+      }
+    }
+    .links {
+      display: grid;
+      grid-template: repeat(3, min-content) / repeat(2, min-content);
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      width: 200px;
+      height: 100%;
+    }
+    .social {
+      display: grid;
+      align-items: stretch;
+      span {
+        font-size: 24px;
+        color: $text1-dark;
+        font-weight: 700;
+      }
+      .icons {
+        display: flex;
+        align-items: flex-end;
+        column-gap: 24px;
+      }
+    }
+  }
+}
+@media (max-width: 319px){
+  .header{
+    .content{
+      justify-content: space-between;
+    }
+  }
+}
+@media (min-width: 320px) {
+  .header {
+    height: auto;
+    padding: 24px;
+    .content {
+      gap: 24px;
+      padding: 0;
+      justify-content: space-between;
+      .logo {
+        display: flex;
+        justify-content: center;
+      }
+      .menu {
+        gap: 24px;
+        justify-content: center;
+      }
+
+    }
+  }
+
+  .footer {
+    .content {
+      justify-content: center;
+      gap: 48px;
+      .about {
+        .img {
+          justify-self: center;
+        }
+      }
+      .links {
+        justify-content: center;
+      }
+      .social {
+        row-gap: 24px;
+        span {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 800px) {
+  .header {
+    height: 60px;
+    padding: 0;
+    .content {
+      gap: 0;
+      padding: 0 64px;
+      justify-content: space-between;
+      .logo {
+        display: flex;
+      }
+
+      .displaymenu div{
+        display: none;
+      }
+      .menu {
+        gap: 0 24px;
+        display: flex;
+      }
+
+      .navtext, .nav-link, .spacefiller{
+        display: block;
+      }
+    }
+  }
+  .scroll {
+    height: 58px !important;
+  }
+}
+@media (min-width: 1028px) {
+  .footer {
+    .content {
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark){
+  .header{
+  .content{
+  .navlink:nth-of-type(1){
+    filter: invert(1);
+  }
+  }
+  }
+}
+
+@media (prefers-color-scheme: light){
+  .header{
+    background-color: white;
+    border-bottom: 1px solid black;
+
+    .content{
+
+      .hamburguer{
+        display: none;
+
+        &.light{
+          display: block;
+        }
+
+      }
+
+    .logo{
+        display: none;
+      }
+      .logo.light{
+        display: flex;
+      }
+      .navlink{
+        color: black;
+
+        
+        &:nth-of-type(1){
+          background-color: black;
+          color: white;
+        }
+      }
+
+      .displaymenu{
+        background-color: white;
+        border-top: 1px solid $text1-dark;
+        a{
+          color: black;
+        }
+
+      }
+      
+    }
+    
+  }
+
+}
+
+@media (prefers-color-scheme: dark){
+  .header{
+    .content .navlink{
+      &:nth-of-type(1){
+        color: black !important;
+      }
+    }
+  }
+}

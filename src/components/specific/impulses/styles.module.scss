@@ -1,0 +1,82 @@
+@import "/src/vars.scss";
+
+.impulses {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin: 124px 0;
+  .content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+    max-width: 1440px;
+    .row {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      column-gap: 64px;
+      .information {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        margin-bottom: 3rem;
+        padding: 32px;
+        p {
+          max-width: 400px;
+          color: $text2-dark;
+        }
+        svg {
+          width: 62px;
+          height: 62px;
+        }
+        .image img{
+          max-width: 310px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: $bp-md){
+  .impulses{
+
+    .content{
+      .row{
+        flex-direction: row;
+
+
+
+        &:nth-of-type(2){
+          .information{
+          order: 2;
+          }
+        }
+
+        .image img{
+          padding: 0;
+        }
+
+      }
+
+
+    }
+  }
+}
+
+@media (prefers-color-scheme: light){
+  .impulses{
+    background-color: white;
+    .content .row .information{
+      h1{
+      color: $lt-text;
+
+      }
+      p{
+        color: $lt-text-p;
+      }
+    }
+  }
+}

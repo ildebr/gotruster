@@ -1,0 +1,97 @@
+@import "/src/vars.scss";
+
+.footer {
+  background-color: $surface1-dark;
+  border-top: $border;
+  padding: 2rem 1rem;
+
+  .content{
+    max-width: $mw;
+    margin: 0 auto;
+    padding: 0 96px;
+  }
+  
+  header, .footerbottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  h2{
+    color: $text1-dark;
+  }
+
+  span{
+    color: $brand-dark;
+  }
+
+  .fillerline{
+    height: 1px;
+    width: 100%;
+    background-color: $text2-dark;
+    margin: 2rem 0;
+  }
+
+  .footerbottom{
+
+    div{
+      text-align: center;
+      a{
+        font-size: .7rem;
+        line-height: 1.6;
+        color: white;
+      }
+
+      .logoContainer{
+        display: inline;
+
+        img{
+          margin-left: .5rem;
+          max-height: 34px;
+        }
+      }
+    }
+  }
+
+
+}
+
+@media (min-width: $bp-md){
+  .footer{
+    header, .footerbottom{
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .footerbottom{
+      .footertext{
+        display: flex;
+        a{
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: light){
+  .footer{
+    background-color: white;
+    border-top: white;
+
+    .content{
+
+      span{
+        color: black;
+      }
+      h2{
+        color: $lt-text;
+      } 
+
+      .footertext a {
+        color: $lt-text-p;
+      }
+    }
+  }
+}

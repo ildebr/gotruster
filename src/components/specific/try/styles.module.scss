@@ -1,0 +1,83 @@
+@import "/src/vars.scss";
+
+.try{
+	.light{
+		display: none;
+	}
+	padding: 4rem 2rem;
+	text-align: center;
+	background-color: $alt-background-black;
+	fieldset{
+		outline: none;
+		border: none;
+	}
+
+	h2{
+		color: $text2-dark;
+		margin-bottom: 2rem;
+	}
+
+	fieldset{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items:center;
+
+		input{
+			width: 100%;
+			max-width: 520px;
+			margin-bottom: .5rem;
+			padding: .5rem;
+			border-radius: 8px;
+			text-align: center;
+			background-color: $surface1-dark;
+			border:none;
+			color: $text2-dark;
+
+			&:last-of-type{
+				margin-bottom: 1rem;
+			}
+		}
+		button{
+			background-color: $alt-background-black;
+			border: none;
+			color: $brand-dark;
+			text-decoration: underline;
+			font-weight: 900;
+		}
+	}
+}
+
+@media (prefers-color-scheme: light){
+
+	.try{
+		.dark{
+			display: none;
+		}
+		.light{
+			display: initial;
+		}
+		background-color: white;
+		h2{
+			color: $lt-text;
+		}
+
+		fieldset input{
+			color: $lt-text;
+			background-color: white;
+			border: 1px solid $lt-text;
+
+
+
+		}
+
+		fieldset input::placeholder{
+			color: $lt-text-p;
+		}
+
+		fieldset button{
+				background-color: white; 
+				color: black;
+			}
+	}
+}

@@ -1,0 +1,26 @@
+@import "/src/vars.scss";
+.yet{
+	height: $banner-height;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+
+	.content{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100%;
+		margin: 0 auto;
+
+		h1{
+			color: $text1-dark;
+			padding:0 2rem;
+			text-align: center;
+
+			span{
+				color: $brand-dark;
+			}
+		}
+	}
+}
